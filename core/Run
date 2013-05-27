@@ -1,0 +1,12 @@
+/*
+ * how to run friso?
+ * 
+ * @author	chenxin
+ * @email	chenxin619315@gmail.com
+ */
+friso -lex {friso lex path}
+
+#for example:
+#the configuration file is in the $(HOME) dictionary name friso.ini
+#try:
+friso -init $(HOME)/friso.ini

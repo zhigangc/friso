@@ -1,0 +1,9 @@
+/*
+ * how to install friso?
+ * 
+ * @author	chenxin
+ * @email	chenxin619315@gmail.com
+ */
+cd src
+make
+sudo make install
