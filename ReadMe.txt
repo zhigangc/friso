@@ -12,3 +12,27 @@ Java版本：http://code.google.com/p/jcseg
 PHP版本：http://code.google.com/p/robbe
 
 
+* How to Install
+
+cd src
+make
+sudo make install
+
+* How to Run
+
+friso -lex {friso lex path}
+
+#for example:
+#the configuration file is in the $(HOME) dictionary name friso.ini
+#try:
+friso -init $(HOME)/friso.ini
+
+
+* How to Uninstall
+
+sudo rm /usr/local/bin/friso
+
+
+
+
+
