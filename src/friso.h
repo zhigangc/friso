@@ -90,7 +90,7 @@ __EXTERN_API__ void friso_dic_load( friso_dic_t, friso_lex_t, string, uint_t );
  * load the lexicon configuration file.
  *	and load all the valid lexicon from the conf file.
  */
-__EXTERN_API__ void friso_dic_load_from_ifile( friso_dic_t, string, size_t );
+__EXTERN_API__ void friso_dic_load_from_ifile( friso_dic_t, string, uint_t );
 
 /*
  * Function: friso_dic_match
