@@ -10,9 +10,9 @@ CC = gcc
 #include directory
 INCLUDE = .
 #complie flags for devolep
-CFLAGS = -g -Wall
+CFLAGS = -g -Wall -fPIC
 #complile flags for products
-FFLAGS = -O2 -Wall
+FFLAGS = -O2 -Wall -fPIC
 #extension libs for friso
 ELIB = m
 LIB_FILE = libfriso.so
