@@ -67,7 +67,8 @@ int main(int argc, char **argv) {
 	task = friso_new_task();
 		
 	i = 0;
-	while ( i < 1000000 ) {
+	while ( i < 4000000 ) {
+		i++;
 		//set the task text.
 		friso_set_text( task, line );
 		println("分词结果:");
@@ -85,7 +86,7 @@ int main(int argc, char **argv) {
 		
 	}
 	friso_free_task( task );
-
+	friso_free(friso);
 	
 	
 	return 0;
