@@ -810,8 +810,8 @@ __STATIC_API__ friso_hits_t next_complex_cjk( friso_t friso, friso_task_t task )
 	task->hits->word = fe->word;
 	task->hits->type = __FRISO_SYS_WORDS__;
 	task->idx += fe->length;						//reset the idx of the task.
+	free_array_list( e->words );
 	free_chunk( e );
-	free_array_list(words);
 	
 	return task->hits;
 }
