@@ -10,9 +10,9 @@ CC = gcc
 #include directory
 INCLUDE = .
 #complie flags for devolep
-CFLAGS = -g -Wall
+CFLAGS = -g -Wall -fPIC
 #complile flags for products
-FFLAGS = -O2 -Wall
+FFLAGS = -O2 -Wall -fPIC
 #extension libs for friso
 ELIB = m
 LIB_FILE = libfriso.so
@@ -20,12 +20,15 @@ LIBRARY_DIR = /usr/lib
 INSTALL_DIR = /usr/local/bin
 
 
-SOURCE = friso.o friso_array.o friso_hash.o friso_lexicon.o friso_link.o friso_string.o
+SOURCE = friso.o friso_array.o friso_hash.o friso_lexicon.o friso_link.o friso_string.o fmem.o
 
-all: share friso
+all: share friso fmem
 
 share: $(SOURCE)
 	$(CC) $(FFLAGS) $(SOURCE) -fPIC -shared -l$(ELIB) -o $(LIB_FILE)
+
+fmem: fmem.o
+	$(CC) fmem.o -o ./fmem -L. -lfriso
 
 friso: tst-friso.o
 	$(CC) tst-friso.o -o ./friso -L. -lfriso
@@ -54,7 +57,7 @@ friso_string.o: friso_string.c friso_API.h
 #clean all the object files.
 .PHONY: clean
 clean:
-	-rm friso $(LIB_FILE) $(SOURCE) tst-friso.o
+	-rm friso fmem $(LIB_FILE) $(SOURCE) tst-friso.o
 
 #install friso
 install: friso
